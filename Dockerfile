@@ -3,8 +3,9 @@ FROM mcr.microsoft.com/playwright:v1.65.0-jammy
 WORKDIR /app
 
 COPY package*.json ./
-COPY . .
 
 RUN npm ci
+
+COPY . .
 
 CMD [ "npm", "test" ]
